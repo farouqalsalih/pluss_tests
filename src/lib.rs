@@ -3,7 +3,7 @@ use std::rc::Rc;
 
 pub fn matmul(n: usize) -> Rc<LoopTNode> {
     // n: usize is array dim
-    let ubound = n as i32; // loop bound
+    let ubound = n as isize; // loop bound
     // creating C[i,j] += A[i,k] * B[k,j]
     let s_ref_c = LoopTNode::new_ref("C", vec![n, n], |ijk| {
         vec![ijk[0] as usize, ijk[1] as usize]
