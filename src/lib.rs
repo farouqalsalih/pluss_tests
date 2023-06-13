@@ -1,10 +1,10 @@
-use dace::ast::{Node, Stmt};
+use dace::ast::Node;
 use std::rc::Rc;
 
 pub fn matmul(n: usize) -> Rc<Node> {
     // n: usize is array dim
     let ubound = n as i32; // loop bound
-    // creating C[i,j] += A[i,k] * B[k,j]
+                           // creating C[i,j] += A[i,k] * B[k,j]
     let s_ref_c = Node::new_ref("C", vec![n, n], |ijk| {
         vec![ijk[0] as usize, ijk[1] as usize]
     });
@@ -30,14 +30,13 @@ pub fn matmul(n: usize) -> Rc<Node> {
     i_loop_ref
 }
 
-
 #[cfg(test)]
 mod tests {
     use super::*;
 
     #[test]
     fn matmul_test() {
-	let mm = matmul(100);
+        let mm = matmul(100);
         assert_eq!(mm.node_count(), 6);
     }
 }
