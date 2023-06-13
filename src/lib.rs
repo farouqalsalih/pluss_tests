@@ -1,6 +1,8 @@
 use dace::ast::Node;
 use std::rc::Rc;
 
+mod polybench;
+
 pub fn matmul(n: usize) -> Rc<Node> {
     // n: usize is array dim
     let ubound = n as i32; // loop bound
