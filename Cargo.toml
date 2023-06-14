@@ -7,3 +7,7 @@ edition = "2021"
 
 [dependencies]
 dace = { path = "../dace" }
+
+[[bin]]
+name = "my_binary"
+path = "src/polybench.rs"
