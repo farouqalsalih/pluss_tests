@@ -47,34 +47,34 @@ pub fn heat_3d(m: usize, n: usize) -> Rc<Node> {
     let k_loop_ref_1 = Node::new_single_loop("k_1", 0, ubound);
 
 
-    let s_ref_a_1 = Node::new_ref("A1", vec![n, n, n], |ijk| {
+    let s_ref_a_1 = Node::new_ref("A", vec![n, n, n], |ijk| {
+        vec![ijk[0] as usize + 1, ijk[1] as usize, ijk[2] as usize]
+    });
+    let s_ref_a_2 = Node::new_ref("A", vec![n, n, n], |ijk| {
         vec![ijk[0] as usize, ijk[1] as usize, ijk[2] as usize]
     });
-    let s_ref_a_2 = Node::new_ref("A2", vec![n, n, n], |ijk| {
+    let s_ref_a_3 = Node::new_ref("A", vec![n, n, n], |ijk| {
+        vec![ijk[0] as usize - 1, ijk[1] as usize, ijk[2] as usize]
+    });
+    let s_ref_a_4 = Node::new_ref("A", vec![n, n, n], |ijk| {
+        vec![ijk[0] as usize, ijk[1] as usize + 1, ijk[2] as usize]
+    });
+    let s_ref_a_5 = Node::new_ref("A", vec![n, n, n], |ijk| {
         vec![ijk[0] as usize, ijk[1] as usize, ijk[2] as usize]
     });
-    let s_ref_a_3 = Node::new_ref("A3", vec![n, n, n], |ijk| {
+    let s_ref_a_6 = Node::new_ref("A", vec![n, n, n], |ijk| {
+        vec![ijk[0] as usize, ijk[1] as usize - 1, ijk[2] as usize]
+    });
+    let s_ref_a_7 = Node::new_ref("A", vec![n, n, n], |ijk| {
+        vec![ijk[0] as usize, ijk[1] as usize, ijk[2] as usize + 1]
+    });
+    let s_ref_a_8 = Node::new_ref("A", vec![n, n, n], |ijk| {
         vec![ijk[0] as usize, ijk[1] as usize, ijk[2] as usize]
     });
-    let s_ref_a_4 = Node::new_ref("A4", vec![n, n, n], |ijk| {
-        vec![ijk[0] as usize, ijk[1] as usize, ijk[2] as usize]
+    let s_ref_a_9 = Node::new_ref("A", vec![n, n, n], |ijk| {
+        vec![ijk[0] as usize, ijk[1] as usize, ijk[2] as usize - 1]
     });
-    let s_ref_a_5 = Node::new_ref("A5", vec![n, n, n], |ijk| {
-        vec![ijk[0] as usize, ijk[1] as usize, ijk[2] as usize]
-    });
-    let s_ref_a_6 = Node::new_ref("A6", vec![n, n, n], |ijk| {
-        vec![ijk[0] as usize, ijk[1] as usize, ijk[2] as usize]
-    });
-    let s_ref_a_7 = Node::new_ref("A7", vec![n, n, n], |ijk| {
-        vec![ijk[0] as usize, ijk[1] as usize, ijk[2] as usize]
-    });
-    let s_ref_a_8 = Node::new_ref("A8", vec![n, n, n], |ijk| {
-        vec![ijk[0] as usize, ijk[1] as usize, ijk[2] as usize]
-    });
-    let s_ref_a_9 = Node::new_ref("A9", vec![n, n, n], |ijk| {
-        vec![ijk[0] as usize, ijk[1] as usize, ijk[2] as usize]
-    });
-    let s_ref_a_10 = Node::new_ref("A10", vec![n, n, n], |ijk| {
+    let s_ref_a_10 = Node::new_ref("A", vec![n, n, n], |ijk| {
         vec![ijk[0] as usize, ijk[1] as usize, ijk[2] as usize]
     });
 
@@ -103,34 +103,34 @@ pub fn heat_3d(m: usize, n: usize) -> Rc<Node> {
     let k_loop_ref_2 = Node::new_single_loop("k_2", 0, ubound);
 
 
-    let s_ref_b_1 = Node::new_ref("B1", vec![n, n, n], |ijk| {
+    let s_ref_b_1 = Node::new_ref("B", vec![n, n, n], |ijk| {
+        vec![ijk[0] as usize + 1, ijk[1] as usize, ijk[2] as usize]
+    });
+    let s_ref_b_2 = Node::new_ref("B", vec![n, n, n], |ijk| {
         vec![ijk[0] as usize, ijk[1] as usize, ijk[2] as usize]
     });
-    let s_ref_b_2 = Node::new_ref("B1", vec![n, n, n], |ijk| {
+    let s_ref_b_3 = Node::new_ref("B", vec![n, n, n], |ijk| {
+        vec![ijk[0] as usize - 1, ijk[1] as usize, ijk[2] as usize]
+    });
+    let s_ref_b_4 = Node::new_ref("B", vec![n, n, n], |ijk| {
+        vec![ijk[0] as usize, ijk[1] as usize + 1, ijk[2] as usize]
+    });
+    let s_ref_b_5 = Node::new_ref("B", vec![n, n, n], |ijk| {
         vec![ijk[0] as usize, ijk[1] as usize, ijk[2] as usize]
     });
-    let s_ref_b_3 = Node::new_ref("B1", vec![n, n, n], |ijk| {
+    let s_ref_b_6 = Node::new_ref("B", vec![n, n, n], |ijk| {
+        vec![ijk[0] as usize, ijk[1] as usize - 1, ijk[2] as usize]
+    });
+    let s_ref_b_7 = Node::new_ref("B", vec![n, n, n], |ijk| {
+        vec![ijk[0] as usize, ijk[1] as usize, ijk[2] as usize + 1]
+    });
+    let s_ref_b_8 = Node::new_ref("B", vec![n, n, n], |ijk| {
         vec![ijk[0] as usize, ijk[1] as usize, ijk[2] as usize]
     });
-    let s_ref_b_4 = Node::new_ref("B1", vec![n, n, n], |ijk| {
-        vec![ijk[0] as usize, ijk[1] as usize, ijk[2] as usize]
+    let s_ref_b_9 = Node::new_ref("B", vec![n, n, n], |ijk| {
+        vec![ijk[0] as usize, ijk[1] as usize, ijk[2] as usize - 1]
     });
-    let s_ref_b_5 = Node::new_ref("B1", vec![n, n, n], |ijk| {
-        vec![ijk[0] as usize, ijk[1] as usize, ijk[2] as usize]
-    });
-    let s_ref_b_6 = Node::new_ref("B1", vec![n, n, n], |ijk| {
-        vec![ijk[0] as usize, ijk[1] as usize, ijk[2] as usize]
-    });
-    let s_ref_b_7 = Node::new_ref("B1", vec![n, n, n], |ijk| {
-        vec![ijk[0] as usize, ijk[1] as usize, ijk[2] as usize]
-    });
-    let s_ref_b_8 = Node::new_ref("B1", vec![n, n, n], |ijk| {
-        vec![ijk[0] as usize, ijk[1] as usize, ijk[2] as usize]
-    });
-    let s_ref_b_9 = Node::new_ref("B1", vec![n, n, n], |ijk| {
-        vec![ijk[0] as usize, ijk[1] as usize, ijk[2] as usize]
-    });
-    let s_ref_b_10 = Node::new_ref("B1", vec![n, n, n], |ijk| {
+    let s_ref_b_10 = Node::new_ref("B", vec![n, n, n], |ijk| {
         vec![ijk[0] as usize, ijk[1] as usize, ijk[2] as usize]
     });
     let s_ref_a = Node::new_ref("A", vec![n, n, n], |ijk| {
